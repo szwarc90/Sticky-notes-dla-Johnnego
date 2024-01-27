@@ -192,9 +192,9 @@ function changeCard() {
         const inputs = cardItem.querySelectorAll('input')
         const textarea = cardItem.querySelector('textarea')
         inputs.forEach((input) => {
-            input.disabled = true
+            input.disabled = !cardValues.done
         })
-        textarea.disabled = true
+        textarea.disabled = !cardValues.done
         updateCard('done', cardItem)
         cardValues = JSON.parse(localStorage.getItem(cardItem.id))
         console.log(cardValues.done)
